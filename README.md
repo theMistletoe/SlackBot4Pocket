@@ -9,11 +9,11 @@ This script posts an article selected randomly from Pocket to Slack.
 ## Requirement
 - python
 - below environment variables
- - [POCKET_CONSUMER_KEY]:key to identify Pocket's user
- - [POCKET_ACCESS_TOKEN]:token to access to Pocket's datas
- (https://getpocket.com/developer/docs/authentication)
- - [SLACK_POST_URL]:Slack's Incoming Webhooks URL
- (https://api.slack.com/incoming-webhooks)
+	- [POCKET_CONSUMER_KEY]:key to identify Pocket's user
+	- [POCKET_ACCESS_TOKEN]:token to access to Pocket's datas
+(https://getpocket.com/developer/docs/authentication)
+	- [SLACK_POST_URL]:Slack's Incoming Webhooks URL
+(https://api.slack.com/incoming-webhooks)
 
 ## Usage
 
