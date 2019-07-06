@@ -70,17 +70,23 @@ def get_article_from_pocket():
 def post_article_to_slack(article_dict):
     """Post to Slack from argument's infomation."""
     url = os.getenv('SLACK_POST_URL')
+
     content = {
         'attachments': [
             {
                 'title': article_dict['given_title'],
                 'title_link': article_dict['given_url'],
-                'text': article_dict['excerpt'],
-                'pretext': article_dict['given_url'],
-                'image_url': article_dict['top_image_url']
+                'pretext': article_dict['given_url']
             }
         ]
     }
+
+    if 'top_image_url' in article_dict.keys():
+        content['attachments'].append({'image_url': article_dict['top_image_url']})
+
+    if 'excerpt' in article_dict.keys():
+        content['attachments'].append({'text': article_dict['excerpt']})
+
     response_code = requests.post(url, json=content)
     return response_code
 
